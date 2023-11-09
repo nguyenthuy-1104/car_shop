@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="~/Content/css/PageList.css" rel="stylesheet" />
+    <link href="~/Content/css/das.css" rel="stylesheet" />
+
+    <title>Dash Admin</title>
+    <style>
+        table {
+            width: 1000px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 3px;
+            border: 1px solid black;
+        }
+
+        #main h2 {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="left-div">
+            <br>
+            <h2 class="logo">Car -<span style="font-weight: 100; "> Omini</span></h2>
+            <hr class="hr" />
+            <ul class="nav">
+
+                <li class="active"><a><i class="fa fa-th-large"></i>@Html.ActionLink("Sản phẩm", "Index", "Home") </a></li>
+                <li ><a><i class="fa fa-user"></i>@Html.ActionLink("Hãng sản xuất", "Index", "Hangsanxuat") </a></li>
+                <li ><a><i class="fa fa-key"></i>  @Html.ActionLink("Người dùng", "Index", "Nguoidung")</a></li>
+                <li ><a><i class="fa fa-desktop"></i> @Html.ActionLink("Phân quyền", "Index", "PhanQuyen")</a></li>
+                <li><a><i class="bx bxs-store"></i> @Html.ActionLink("Đơn hàng", "Index", "PhanQuyen")</a></li>
+                <li><a><i class='bx bx-message-square-add'></i> @Html.ActionLink("Tin tức", "Index", "PhanQuyen")</a></li>
+                <li><a><i class="fa fa-gear"></i> Cài đặt</a></li>
+            </ul>
+            <br><br>
+
+        </div>
+
+        <div class="right-div">
+            <div id="main">
+                <br>
+                <div class="head" style="margin-bottom: 10px">
+                    <div class="col-div-6">
+                        <p class="nav"> Trang quản trị</p>
+                    </div>
+
+                    <div class="col-div-6">
+
+
+                        <div class="profile">
+
+                            <img src="~/Content/img/hannah.jpg" class="pro-img" style="border-radius: 50%"/>
+                            <p>Admin <i class="fa fa-ellipsis-v dots" aria-hidden="true"></i></p>
+                            <div class="profile-div">
+                                <p><i class="fa fa-user"></i> Thông tin</p>
+                                <p><i class="fa fa-cogs"></i> Cài đặt</p>
+                                <p><i class="fa fa-power-off"></i><a href="/User/Dangxuat" style="text-decoration: none; margin-left: 2px">Đăng xuất</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                @RenderBody()
+                <div class="clearfix"></div>
+                <br /><br /><br />
+
+
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".profile p").click(function () {
+                $(".profile-div").toggle();
+
+            });
+            $(".noti-icon").click(function () {
+                $(".notification-div").toggle();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('li').click(function () {
+            $('li').removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+</body>
+
+</html>

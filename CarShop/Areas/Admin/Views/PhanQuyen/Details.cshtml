@@ -1,0 +1,31 @@
+﻿@model CarShop.Models.PhanQuyen
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    table, th, td {
+        border: 0px solid;
+    }
+</style>
+<h2>Chi tiết phân quyền</h2>
+
+<div>
+   <table style="width: 250px ; margin-bottom: 3px">
+       <tr>
+           <td>Mã quyền:</td>
+           <td>@Html.DisplayFor(model => model.IDQuyen)</td>
+       </tr>
+       <tr>
+           <td>Tên quyền:</td>
+           <td>@Html.DisplayFor(model => model.TenQuyen)</td>
+       </tr>
+   </table>
+    
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new {  id = Model.IDQuyen }) |
+    @Html.ActionLink("Về trang chủ", "Index")
+</p>

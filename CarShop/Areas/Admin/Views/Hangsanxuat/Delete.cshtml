@@ -1,0 +1,36 @@
+﻿@model CarShop.Models.HangSX
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    table, th, td {
+        border: 0px solid;
+    }
+</style>
+
+<h2>Xoá hãng sản xuất </h2>
+
+
+<div>
+    <table style="width: 300px">
+        <tr>
+            <td>Mã hãng</td>
+            <td> @Html.DisplayFor(model => model.MaHang)</td>
+        </tr>
+        <tr>
+            <td>Tên hãng</td>
+            <td> @Html.DisplayFor(model => model.TenHang)</td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin-top: 10px" >
+            <input type="submit" value="Xoá" class="btn btn-default" style="margin-bottom: 15px" /> |
+            @Html.ActionLink("Về trang chủ", "Index")
+        </div>
+    }
+</div>

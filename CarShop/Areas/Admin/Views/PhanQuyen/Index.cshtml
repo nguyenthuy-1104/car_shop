@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CarShop.Models.PhanQuyen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lí phân quyền</h2>
+
+<p style="margin-bottom: 10px">
+    <a href="@Url.Action("Create" , "PhanQuyen")" style="border: 1px solid black ;  text-decoration: none; font-size: 15px ; padding: 3px">Thêm mới</a>
+</p>
+<table class="table" style="width: 300px">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Tên Quyền
+        </th>
+        <th>Cập nhật</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDQuyen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenQuyen)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDQuyen }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDQuyen }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.IDQuyen })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,354 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div class="main-section">
+        <div class="main-left">
+            <div class="accordition">
+                <div class="cap">Thương hiệu</div>
+                <div class="ct">
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="thuonghieu" value="Mercedes">Mercedes</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="thuonghieu" value="BWM">BWM</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="thuonghieu" value="Toyota">Toyota</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="thuonghieu" value="VinFast">VinFast</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="thuonghieu" value="Kia">Kia</label>
+                </div>
+
+                <div class="cap">Giá bán</div>
+                <div class="ct">
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="giaban" value="1">Dưới 500 triệu</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="giaban" value="2">Từ 500 đến 1 tỷ</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="giaban" value="3">Từ 1 đến 2 tỷ</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="giaban" value="4">Trên 2 tỷ</label>
+                </div>
+
+                <div class="cap">Năm sản xuất</div>
+                <div class="ct">
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="nam" value="1">Dưới năm 2019</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="nam" value="2">Từ năm 2019 trở lên </label>
+                </div>
+
+                <div class="cap">Khuyến mại</div>
+                <div class="ct">
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="sale" value="1">Giảm dưới 20%</label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="sale" value="2">Giảm từ 20 đến 30% </label>
+                    <label for=""><input onchange="chonXe()" type="checkbox" class="sale" value="3">Giảm trên 30% </label>
+                </div>
+
+                <div class="cap">Có thể bạn quan tâm</div>
+                <div class="list-product">
+                    <div class="item-product">
+                        <div class="image-product">
+                            <img src="~/Content/img/product1.jpg" alt="" class="img-product">
+                        </div>
+                        <div class="content-product">
+                            <h6>BWM Series-2</h6>
+                            <p>2.900.000.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="item-product">
+                        <div class="image-product">
+                            <img src="~/Content/img/product2.jpg" alt="" class="img-product">
+                        </div>
+
+                        <div class="content-product">
+                            <h6>Toyota Camry</h6>
+                            <p>450.000.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="item-product">
+                        <div class="image-product">
+                            <img src="~/Content/img/product3.jpg" alt="" class="img-product">
+                        </div>
+                        <div class="content-product">
+                            <h6>VinFast VF8</h6>
+                            <p>700.000.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="item-product">
+                        <div class="image-product">
+                            <img src="~/Content/img/product4.jpg" alt="" class="img-product">
+                        </div>
+                        <div class="content-product">
+                            <h6>Mercedes 250</h6>
+                            <p>1.900.000.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="item-product">
+                        <div class="image-product">
+                            <img src="~/Content/img/product5.jpg" alt="" class="img-product">
+                        </div>
+                        <div class="content-product">
+                            <h6>Toyota Yaris</h6>
+                            <p>900.000.000 đ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-right">
+            <div id="list1">
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End Main -->
+<!-- link script -->
+<script>
+        var arrXe = [{
+                tenXe: 'BWM Series',
+                sale: 10,
+                gia: 570000000,
+                hinh: '~/Content/img/featured1.png',
+                thuonghieu: 'BWM',
+                nam: 2020
+            }, {
+                tenXe: 'Mercedes MP',
+                sale: 20,
+                gia: 1200000000,
+                hinh: '~/Content/img/featured2.png',
+                thuonghieu: 'Mercedes',
+                nam: 2019
+            },
+
+            {
+                tenXe: 'BWM 2S',
+                sale: 5,
+                gia: 700000000,
+                hinh: '~/Content/img/featured3.png',
+                thuonghieu: 'BWM',
+                nam: 2022
+            }, {
+                tenXe: 'Toyota Camry',
+                sale: 20,
+                gia: 1890000000,
+                hinh: '~/Content/img/featured4.png',
+                thuonghieu: 'Toyota',
+                nam: 2022
+            }, {
+                tenXe: 'VinFast WB',
+                sale: 19,
+                gia: 3566600000,
+                hinh: '~/Content/img/featured5.png',
+                thuonghieu: 'VinFast',
+                nam: 2018
+            }, {
+                tenXe: 'Mercedes A45',
+                sale: 10,
+                gia: 389000000,
+                hinh: '~/Content/img/featured3.png',
+                thuonghieu: 'Mercedes',
+                nam: 2019
+            }, {
+                tenXe: 'VinFast VF F8',
+                sale: 15,
+                gia: 750000000,
+                hinh: '~/Content/img/featured5.png',
+                thuonghieu: 'VinFast',
+                nam: 2022
+            }, {
+                tenXe: 'Mercedes A19',
+                sale: 30,
+                gia: 2290000000,
+                hinh: '~/Content/img/featured3.png',
+                thuonghieu: 'Mercedes',
+                nam: 2018
+            }, {
+                tenXe: 'BWM Series Couple',
+                sale: 10,
+                gia: 570000000,
+                hinh: '~/Content/img/featured1.png',
+                thuonghieu: 'BWM',
+                nam: 2020
+            }, {
+                tenXe: 'Mercedes MP3',
+                sale: 12,
+                gia: 1200000000,
+                hinh: '~/Content/img/featured2.png',
+                thuonghieu: 'Mercedes',
+                nam: 2019
+            }, {
+                tenXe: 'BWM 2S',
+                sale: 5,
+                gia: 700000000,
+                hinh: '~/Content/img/featured1.png',
+                thuonghieu: 'BWM',
+                nam: 2022
+            }, {
+                tenXe: 'Toyota Fortuner',
+                sale: 20,
+                gia: 1800000000,
+                hinh: '~/Content/img/featured2.png',
+                thuonghieu: 'Toyota',
+                nam: 2018
+            },
+
+            {
+                tenXe: 'VinFast VF E34',
+                sale: 19,
+                gia: 1400000000,
+                hinh: '~/Content/img/featured4.png',
+                thuonghieu: 'VinFast',
+                nam: 2020
+            }, {
+                tenXe: 'BWM Series 2E',
+                sale: 10,
+                gia: 500000000,
+                hinh: '~/Content/img/featured2.png',
+                thuonghieu: 'BWM',
+                nam: 2016
+            }, {
+                tenXe: 'BWM Series',
+                sale: 30,
+                gia: 350000000,
+                hinh: '~/Content/img/featured5.png',
+                thuonghieu: 'BWM',
+                nam: 2020
+            }, {
+                tenXe: 'Kia K9',
+                sale: 21,
+                gia: 890000000,
+                hinh: '~/Content/img/featured3.png',
+                thuonghieu: 'Kia',
+                nam: 2021
+            }, {
+                tenXe: 'Kia Cerato',
+                sale: 5,
+                gia: 770000000,
+                hinh: '~/Content/img/featured1.png',
+                thuonghieu: 'Kia',
+                nam: 2023
+            }, {
+                tenXe: 'Toyota Altis 1.8 MT',
+                sale: 3,
+                gia: 1340000000,
+                hinh: '~/Content/img/featured3.png',
+                thuonghieu: 'Toyota',
+                nam: 2019
+            }, {
+                tenXe: 'BWM 2S',
+                sale: 5,
+                gia: 700000000,
+                hinh: '~/Content/img/featured1.png',
+                thuonghieu: 'BWM',
+                nam: 2022
+            },
+
+            {
+                tenXe: 'Toyota Corolla Altis',
+                sale: 20,
+                gia: 788000000,
+                hinh: '~/Content/img/featured2.png',
+                thuonghieu: 'Toyota',
+                nam: 2019
+            }, {
+                tenXe: 'Toyota Yaris',
+                sale: 19,
+                gia: 700600000,
+                hinh: '~/Content/img/featured5.png',
+                thuonghieu: 'Toyota',
+                nam: 2023
+            },
+        ];
+
+        function hienThi(thuonghieu_arr = [], giaban_arr = [], nam_arr = [], sale_arr = []) {
+            var list1 = document.getElementById("list1");
+            list1.innerHTML = '';
+            for (i = 0; i < arrXe.length; i++) {
+                thuonghieuXe = arrXe[i].thuonghieu;
+                giaXe = arrXe[i].gia;
+                namsx = arrXe[i].nam;
+                ggXe = arrXe[i].sale;
+
+                //loc ra cac loai
+                if (thuonghieu_arr.length > 0) {
+                    if (thuonghieu_arr.includes(thuonghieuXe) == false) continue;
+                    //bo qua cac san pham khong co trong thuong hieu tren
+                }
+
+                //loc theo gia
+                if (giaban_arr.length > 0) {
+                    if (giaXe < 500000000 && giaban_arr.includes('1') == false) continue;
+                    if (giaXe >= 500000000 && giaXe < 1000000000 && giaban_arr.includes('2') == false) continue;
+                    if (giaXe >= 1000000000 && giaXe < 2000000000 && giaban_arr.includes('3') == false) continue;
+                    if (giaXe >= 2000000000 && giaban_arr.includes('4') == false) continue;
+                }
+
+                //loc theo nam san xuat
+                if (nam_arr.length > 0) {
+                    if (namsx < 2019 && nam_arr.includes('1') == false) continue;
+                    if (namsx >= 2019 && nam_arr.includes('2') == false) continue;
+                }
+
+                //loc theo khuyến mãi
+                if (sale_arr.length > 0) {
+                    if (ggXe < 20 && sale_arr.includes('1') == false) continue;
+                    if (ggXe >= 20 && ggXe < 30 && sale_arr.includes('2') == false) continue;
+                    if (ggXe >= 30 && sale_arr.includes('3') == false) continue;
+                }
+
+                @{var baseUrl =Url.Content("~");}
+                var imageUrl = "@baseUrl" + arrXe[i].hinh.replace("~/","");
+                list1.innerHTML += `
+                    <div class="box-cotainer">
+                    <div class="box">
+                        <span class="sale">-${arrXe[i].sale} %</span>
+                        <div class="image">
+                            <img src="${imageUrl}" alt="">
+                            <div class="icon">
+                                <a href="#"><i class='bx bx-heart'></i></a>
+                                <a href="/ShoppingCart/AddToCart" class="cart-btn">Mua ngay</a>
+                                <a href="#"><i class='bx bx-share'></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class= "name-product">${arrXe[i].tenXe}</h3>
+                            <p class="price">${arrXe[i].gia} đ <span>${arrXe[i].nam}</span></p>
+                        </div>
+                    </div>
+                    `;
+            }
+        }
+
+        hienThi();
+</script>
+
+<script>
+        function chonXe() {
+
+            //chon thuong hieu
+            var arr1 = document.getElementsByClassName("thuonghieu");
+            var thuonghieu_arr = [];
+            for (i = 0; i < arr1.length; i++) {
+                if (arr1[i].checked) thuonghieu_arr.push(arr1[i].value)
+            }
+
+            //chon gia ban
+            var arr2 = document.getElementsByClassName("giaban");
+            var giaban_arr = [];
+            for (i = 0; i < arr2.length; i++) {
+                if (arr2[i].checked == true) giaban_arr.push(arr2[i].value)
+            }
+
+
+            //chon nam sx
+            var arr3 = document.getElementsByClassName("nam");
+            var nam_arr = [];
+            for (i = 0; i < arr3.length; i++) {
+                if (arr3[i].checked == true) nam_arr.push(arr3[i].value)
+            }
+
+            //chon khuyen mai
+            var arr4 = document.getElementsByClassName("sale");
+            var sale_arr = [];
+            for (i = 0; i < arr4.length; i++) {
+                if (arr4[i].checked == true) sale_arr.push(arr4[i].value)
+            }
+
+            hienThi(thuonghieu_arr, giaban_arr, nam_arr, sale_arr);
+        }
+</script>
+

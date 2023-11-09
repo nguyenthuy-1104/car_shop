@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CarShop.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lí người dùng</h2>
+
+<p>
+    @*<button class="btn-default"> @Html.ActionLink("Thêm mới", "Create") </button>*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Điện thoại
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Tên quyền
+        </th>
+        <th>Cập nhật</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhanQuyen.TenQuyen)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new {  id=item.MaNguoiDung }) |
+            @Html.ActionLink("Xoá", "Delete", new { id=item.MaNguoiDung})
+        </td>
+    </tr>
+}
+
+</table>

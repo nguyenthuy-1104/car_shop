@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CarShop.Models.HangSX>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lí hãng sản xuất</h2>
+
+<p style="margin-bottom: 5px">
+    <button class="btn-default"><a href="@Url.Action("Create" ,"Hangsanxuat" )" style="text-decoration: none; font-size: 15px; color: black">Thêm mới</a></button>
+</p>
+<table style="width: 500px; text-align:center">
+    <tr>
+        <th>
+             Mã hãng
+        </th>
+        <th>
+            Tên hãng
+        </th>
+        <th>Hành động</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHang)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaHang }) |
+            @Html.ActionLink("Chi tiết", "Details", new {  id=item.MaHang}) |
+            @Html.ActionLink("Xoá", "Delete", new {  id=item.MaHang })
+        </td>
+    </tr>
+}
+
+</table>

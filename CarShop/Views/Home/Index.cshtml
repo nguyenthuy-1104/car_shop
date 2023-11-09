@@ -1,0 +1,617 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+
+    /*cart*/
+
+    .cart {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+        .cart h2 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .cart table {
+            width: 100%;
+        }
+
+            .cart table thead tr th:first-child {
+                text-align: left;
+            }
+
+            .cart table tr td {
+                border-bottom: 1px solid #eee;
+                padding: 12px 0;
+            }
+
+            .cart table thead tr th:last-child {
+                text-align: right;
+            }
+
+            .cart table tbody tr td:last-child {
+                text-align: right;
+            }
+
+
+    /* ============ */
+
+    .cart {
+        position: absolute;
+        height: 100vh;
+        width: 500px;
+        right: 0;
+        top: 0;
+        background-color: #ddd;
+        padding: 12px 20px;
+        overflow-y: scroll;
+        right: -100%
+    }
+
+        .cart button {
+            margin-top: 10px;
+            background-color: var(--red);
+            color: #fff;
+            font-size: 17px;
+            height: 30px;
+            padding: 0 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cart i {
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+    .cart-icon i {
+        cursor: pointer;
+    }
+</style>
+
+<div id="banner">
+    <div class="box-left">
+        <h2>
+            <span>DỊCH VỤ BÁN XE</span>
+            <br>
+            <span>CAO CẤP</span>
+        </h2>
+        <p>Chuyên cung cấp các dòng xe hiện đại, du lịch từ 4- 15 chỗ kèm theo cơ hội nhận bảo hiểm 2 năm cùng những đặc quyền vượt trội cho khách hàng</p>
+        <button>Mua ngay</button>
+    </div>
+    <div class="box-right">
+        <img src="~/Content/img/featured1.png" alt="">
+        <img src="~/Content/img/featured2.png" alt="">
+        <img src="~/Content/img/featured3.png" alt="">
+    </div>
+    <div class="to-bottom">
+        <a href="">
+            <img src="~/Content/img/to_bottom.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<div id="products" class="products ">
+    <h1 class="heading">Sản phẩm <span>nổi bật</span></h1>
+    <div class="list-item">
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured1.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#" ><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price" id="price">570000000 đ <span>2020</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured2.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#" ><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Mercedes MP</h3>
+                    <p class="price">1200000000 đ <span>2019</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-5%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured1.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM 2S</h3>
+                    <p class="price">700000000 đ <span>2022</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-20%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured2.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Toyota</h3>
+                    <p class="price">1890000000 đ <span>2022</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-19%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured4.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>VinFast WB</h3>
+                    <p class="price">3566600000 đ <span>2018</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured3.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">389000000 đ <span>2019</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured5.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM 2S</h3>
+                    <p class="price">350000000 đ <span>2020</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-30%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured3.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#" ><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">2190000000 đ <span>2018</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="cart">
+    <i class="fa fa-times"></i>
+    <h2>Giỏ hàng</h2>
+    <form action="" style="display: flex; flex-direction: column;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>SL</th>
+                    <th>Chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td style="display: flex; align-items: center;"><img src="img/featured1.png" alt="" style="width: 70px;"> BWM Series</td>
+                    <td>
+                        <p><span>570000000</span><sup>đ</sup></p>
+                    </td>
+                    <td><input style="width: 30px; border:  1px solid black;border-radius: 3px ; color: black;" type="number" value="1" min="1"></td>
+                    <td style="cursor: pointer;">Xoá</td>
+                </tr>
+                <tr>
+                    <td style="display: flex; align-items: center;"><img src="img/featured2.png" alt="" style="width: 70px;"> Mercedes NP</td>
+                    <td>
+                        <p><span>1200000000</span><sup>đ</sup></p>
+                    </td>
+                    <td><input style="width: 30px; border:  1px solid black;border-radius: 3px ; color: black;" type="number" value="1" min="1"></td>
+                    <td style="cursor: pointer;">Xoá</td>
+                </tr>-->
+            </tbody>
+        </table>
+        <div class="price-total">
+            <p style="font-weight: 700 ">Tổng cộng: <span> 0</span><sup>đ</sup></p>
+        </div>
+    </form>
+
+    <button>Đặt hàng</button>
+
+</section>
+
+<div class="info">
+    <div class="info-text">
+        <h2 class="info-heading">Khách hàng đã đặt mua xe tại CarOmni</h2>
+        <p>Sự tin tưởng của khách hàng chính là thành công lớn nhất của chúng tôi </p>
+    </div>
+
+    <div class="slide">
+        <img src="~/Content/img/slide1.jpg" id="image" alt="">
+        <h3 class="slide-text">TOYOTA <br> Giá: 1.200.000.000 đ</h3>
+        <i class='bx bx-chevron-left-circle button' onclick="prev()"></i>
+        <i class='bx bx-chevron-right-circle button' onclick="next()"></i>
+    </div>
+</div>
+
+
+<div class="content-section">
+    <h2 class="section-heading">Sản phẩm bán chạy</h2>
+    <i class='bx bx-chevron-left prev-button'></i>
+    <i class='bx bx-chevron-right next-button'></i>
+    <div class="product-list">
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured1.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#" ><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">570000000 đ <span>2020</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured2.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Mercedes MP</h3>
+                    <p class="price">1200000000 đ <span>2019</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-5%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured1.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM 2S</h3>
+                    <p class="price">700000000 đ <span>2022</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-20%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured2.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Toyota</h3>
+                    <p class="price">1890000000 đ <span>2022</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-19%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured4.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>VinFast WB</h3>
+                    <p class="price">3566600000 đ <span>2018</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured3.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">389000000 đ <span>2019</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-10%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured5.png" alt="">
+                    <div class="icon">
+                        <a href="#" ><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#" ><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">350000000 đ <span>2020</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box-cotainer">
+            <div class="box">
+                <span class="sale">-30%</span>
+                <div class="image">
+                    <img src="~/Content/img/featured3.png" alt="">
+                    <div class="icon">
+                        <a href="#"><i class='bx bx-heart'></i></a>
+                        <a href="#" class="cart-btn">Mua ngay</a>
+                        <a href="#"><i class='bx bx-share'></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>BWM Series</h3>
+                    <p class="price">2190000000 đ <span>2018</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="img-car">
+    <img src="~/Content/img/img-car.jpg" alt="">
+</div>
+
+<div class="section-new">
+    <div class="content-new">
+        <h3 class="new-heading">Tin tức & sự kiện</h3>
+        <div class="new-list">
+            <div class="list-item">
+                <img src="~/Content/img/new1.jpg" alt="">
+                <p class="item-date">16 <br>Th4</p>
+                <div class="item-content">
+                    <h5 class="item-heading">Vén màn crossover hạng sang nhỏ xinh Audi Q2</h5>
+                    <p class="item-blog">Mẫu crossover hạng sang cỡ nhỏ Audi Q2 hoàn toàn mới đã được ra mắt</p>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <img src="~/Content/img/new2.jpg" alt="">
+                <p class="item-date">16 <br>Th4</p>
+                <div class="item-content">
+                    <h5 class="item-heading">Công nghệ đột phá của BMW 7 Series hoàn toàn mới</h5>
+                    <p class="item-blog">Chìa khóa siêu thông minh, hệ thống điều khiển bằng cử chỉ, đỗ xe tự</p>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <img src="~/Content/img/new3.jpg" alt="">
+                <p class="item-date">16 <br>Th4</p>
+                <div class="item-content">
+                    <h5 class="item-heading">Centenario &#8211; Siêu xe mạnh nhất của Lamborghini trình làng</h5>
+                    <p class="item-blog">Với động cơ V12, hút khí tự nhiên, tạo ra công suất tối đa 770</p>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <img src="~/Content/img/new4.jpg" alt="">
+                <p class="item-date">16 <br>Th4</p>
+                <div class="item-content">
+                    <h5 class="item-heading">Mercedes-Benz C-Class Cabriolet 2017 chính thức ra mắt</h5>
+                    <p class="item-blog">Là đối thủ cạnh tranh của Audi A4 Convertible và BMW 4-Series Convertible</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<script>
+    const btn = document.querySelectorAll(".cart-btn");
+    btn.forEach(function (a, index) {
+        //console.log(a, index);
+        a.addEventListener("click", function (event) {
+            {
+                var btnItem = event.target;
+                var product = btnItem.parentElement.parentElement.parentElement;
+                var productImg = product.querySelector("img").src;
+                var productName = product.querySelector("h3").innerText;
+                var productPrice = product.querySelector('.price').textContent.trim().split(' ')[0];
+                addcart(productPrice, productImg, productName);
+                console.log(productImg)
+
+            }
+        })
+    })
+
+    // function addcart(productPrice, productImg, productName) {
+    //     var addstr = document.createElement("tr");
+    //     var trcontent = '<tr><td style="display: flex; align-items: center;"><img src="' + productImg + '" alt="" style="width: 70px;"> ' + productName + '</td><td><p><span>' + productPrice + '</span><sup>đ</sup></p></td><td><input style="width: 30px; border:  1px solid black;border-radius: 3px ; color: black;" type="number" value="1" min="1"></td><td style="cursor: pointer;">Xoá</td></tr>';
+
+    //     addstr.innerHTML = trcontent;
+    //     var cartTable = document.querySelector("tbody");
+    //     cartTable.append(addstr);
+    //     carttotal();
+    // }
+
+
+    function addcart(productPrice, productImg, productName) {
+        // Xử lý thêm <Tr> cho <Tbody>
+        var addtr = document.createElement("tr");
+        var cartItem = document.querySelectorAll("tbody tr");
+        for (var i = 0; i < cartItem.length; i++) {
+            var itemName = cartItem[i].querySelector(".item_name").innerHTML;
+            if (itemName == productName) {
+                alert("Sản phẩm 「" + productName + "」 bạn chọn đã có trong giỏ hàng !");
+                return;
+            }
+        }
+        var trContent =
+            "<tr>" +
+            '<td style="display: flex; align-items: center;"><img style="width:100px;" src="' +
+            productImg +
+            '" alt="Iphone thumb"><span class="item_name">' +
+            productName +
+            "</span>" +
+            "</td>" +
+            "<td>" +
+            "<p>" +
+            '<span class="item_price">' +
+            productPrice +
+            "</span>" +
+            "<sup>đ</sup>" +
+            "</p>" +
+            "</td>" +
+            "<td>" +
+            '<input class="item_quantity" style="width:30px; border:1px solid black; border-radius: 3px ; color: black" type="number" value="1" min="1">' +
+            "</td>" +
+            '<td style="cursor: pointer"><span class="item_delete">Xóa</span></td>' +
+            "</tr>";
+        addtr.innerHTML = trContent;
+        var cartTable = document.querySelector("tbody");
+        cartTable.append(addtr);
+
+        // move đến thẻ <tr> mới tạo ra
+
+        var lastTr = cartTable.lastElementChild;
+
+        // Xử lý event cho button 'xóa' 
+        var itemDelete = lastTr.querySelector(".item_delete");
+        itemDelete.addEventListener("click", function (event) {
+            var target = event.target;
+            var targetTr = target.parentElement.parentElement;
+            targetTr.remove();
+            // Reset lại giá tổng
+            carttotal();
+        });
+
+        // Xử lý event update số lượng sản phẩm
+        var quantityChange = lastTr.querySelector(".item_quantity");
+        quantityChange.addEventListener("change", function (event) {
+            // Reset lại giá tổng
+            carttotal();
+        });
+
+        // Tính tổng giá tiền
+        carttotal();
+    }
+
+    //total price
+    function carttotal() {
+        var cartItem = document.querySelectorAll("tbody tr");
+        //console.log(cartItem)
+        var totalC = 0;
+        for (var i = 0; i < cartItem.length; i++) {
+            var inputValue = cartItem[i].querySelector("input").value;
+
+            var productPrice = cartItem[i].querySelector(".item_price").innerHTML;
+
+            totalA = inputValue * productPrice
+
+            totalC += totalA
+        }
+
+        var cartTotalA = document.querySelector(".price-total span")
+        cartTotalA.innerHTML = totalC
+        console.log(cartTotalA)
+    }
+
+    const cartbtn = document.querySelector(".fa-times")
+    const cartshow = document.querySelector(".bx-cart")
+
+    cartshow.addEventListener("click", function () {
+        document.querySelector(".cart").style.right = "0";
+    })
+
+    cartbtn.addEventListener("click", function () {
+        document.querySelector(".cart").style.right = "-100%";
+    })
+</script>

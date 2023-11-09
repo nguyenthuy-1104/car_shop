@@ -1,0 +1,85 @@
+﻿@model CarShop.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/Content/css/Styleform.css" rel="stylesheet" />
+
+<div id="wrap-n">
+    <div id="form-register">
+        @using (Html.BeginForm("Dangki", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <table>
+                <tr class="title-form">
+                    <th colspan="2">Đăng kí tài khoản</th>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.HoTen)</td>
+                    <td style="border: 1px solid black; border-radius: 3px; background-color: #393646">@Html.TextBoxFor(m => m.HoTen)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.HoTen)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.Email)</td>
+                    <td style="border: 1px solid black; border-radius: 3px; background-color: #393646">@Html.TextBoxFor(m => m.Email)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.Email)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        @if (ViewBag.error != null)
+                        {
+                            <span class="field-validation-error">@ViewBag.error</span>
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.DienThoai)</td>
+                    <td style="border: 1px solid black; border-radius: 3px; background-color: #393646">@Html.TextBoxFor(m => m.DienThoai)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.DienThoai)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.MatKhau)</td>
+                    <td style="border: 1px solid black; border-radius: 3px; background-color: #393646">@Html.PasswordFor(m => m.MatKhau)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.MatKhau)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.DiaChi)</td>
+                    <td style="border: 1px solid black; border-radius: 3px; background-color: #393646">@Html.TextBoxFor(m => m.DiaChi)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.DiaChi)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng kí" class="form-submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="margin-top: 15px ">Bạn đã có tài khoản? <a href="@Url.Action("Dangnhap" , "User")" style="text-decoration: underline; color: darkslategray ">Đăng nhập</a></p> 
+                    </td>
+                </tr>
+            </table>
+           
+        }
+    </div>
+
+</div>

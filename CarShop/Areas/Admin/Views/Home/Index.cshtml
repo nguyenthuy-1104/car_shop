@@ -1,0 +1,90 @@
+﻿@model PagedList.IPagedList<CarShop.Models.Sanpham>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý sản phẩm </h2>
+
+<p style="margin-bottom: 2px">
+    <button class="btn-default"><a href="@Url.Action("Create", "Home")" style="text-decoration: none; font-size: 15px; color: black">Thêm mới</a></button>
+
+</p>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <p style="margin: 3px">
+        Tìm kiếm sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+
+
+<table class="table table-bordered">
+    <tr>
+
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Giá tiền
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Ảnh bìa
+        </th>
+        <th>
+            Tên hãng
+        </th>
+        <th>
+            Cập nhật
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tensp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Giatien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/img/" +item.Hinhanh)" width="50" height="50" />
+                @*@Html.DisplayFor(modelItem => item.Anhbia)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HangSX.TenHang)
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Masp })|
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Masp }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.Masp })
+            </td>
+        </tr>
+    }
+
+</table>
+<!-- Thêm mã phân trang -->
+
+<br />
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    <!-- Kết thúc -->

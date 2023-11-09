@@ -1,0 +1,31 @@
+﻿@model CarShop.Models.HangSX
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    table, th, td {
+        border: 0px solid;
+    }
+</style>
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <table style="width: 300px">
+        <tr>
+            <td>Mã hãng</td>
+            <td> @Html.DisplayFor(model => model.MaHang)</td>
+        </tr>
+        <tr>
+            <td>Tên hãng</td>
+            <td> @Html.DisplayFor(model => model.TenHang)</td>
+        </tr>
+    </table>
+</div>
+<p style="margin-top: 5px">
+    @Html.ActionLink("Sửa", "Edit", new {  id = Model.MaHang }) |
+    @Html.ActionLink("Về trang chủ", "Index")
+</p>

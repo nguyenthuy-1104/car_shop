@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car sale website</title>
+
+    <!-- link css -->
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/product.css" rel="stylesheet" />
+    <link href="~/Content/css/introduce.css" rel="stylesheet" />
+    <link href="~/Content/css/swiper.min.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <!-- Google-font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    @{ 
+        var use = Session["use"] as CarShop.Models.NguoiDung;
+    }
+    <!-- Header -->
+    <header>
+        <!-- menu -->
+        <div class="mobile-menu bg-second">
+            <a href="#" class="mb-logo">CarOmni</a>
+            <span class="mb-menu-toggle" id="mb-menu-toggle">
+                <i class='bx bx-menu'></i>
+            </span>
+        </div>
+        <!-- main header -->
+        <div class="header-wrapper" id="header-wrapper">
+            <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
+                <i class='bx bx-x'></i>
+            </span>
+        </div>
+
+        <div class="bg-main">
+            <div class="mid-header container">
+                <a href="#" class="logo">CarOmini</a>
+                <div class="search">
+                    <input type="text" placeholder="Tìm kiếm" name="SearchString" >
+                    <i class='bx bx-search-alt'></i>
+                </div>
+                <ul class="user-menu">
+                    @{ 
+                        if(use != null)
+                        {
+                             <li style="display: flex; justify-content: center; flex-direction: column;">   
+                                 Xin chào : @use.HoTen
+                                 &nbsp;    
+                             </li>
+                        }
+                    }
+                    <li><a href="#"><i class='bx bx-bell'></i></a></li>
+                    @{
+                        if (use == null)
+                        {
+                            <li><a href="/User/Dangnhap"><i class='bx bx-user-circle'></i></a></li>
+                        }
+                    }
+
+                    <li class="cart-icon"><a href="#"><i class='bx bx-cart'></i></a></li>
+
+                    @{
+                        if (use != null)
+                        {
+                            <li><a href="@Url.Action("DangXuat" , "User")"><i class='bx bx-log-out'></i></a></li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-second">
+            <div class="bottom-header container">
+                <ul class="main-menu">
+                    <li>@Html.ActionLink("Trang chủ", "Index","Home")</li>
+                    <li>@Html.ActionLink("Giới thiệu", "About", "Home")</li>
+                    <!-- mega menu -->
+                    <li class="mega-dropdown">
+                        <a href="/Product/Index">Sản phẩm<i class='bx bxs-chevron-down'></i></a>
+                        <div class="mega-content">
+                            <div class="row">
+                                <div class="col-3 col-md-12">
+                                    <div class="box">
+                                        <h3>BWM</h3>
+                                        <ul>
+                                            <li><a href="#">BWM 2-Series</a></li>
+                                            <li>
+                                                <a href="#">2-Series Convertible</a>
+                                            </li>
+                                            <li><a href="#">2-Series Coupe</a></li>
+                                            <li><a href="#">3-Series Hatchback</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-md-12">
+                                    <div class="box">
+                                        <h3>Mercedes</h3>
+                                        <ul>
+                                            <li><a href="#">Mercedes A19</a></li>
+                                            <li><a href="#">Mercedes A200</a></li>
+                                            <li><a href="#">Mercedes A250</a></li>
+                                            <li><a href="#">Mercedes A45 AMG</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-md-12">
+                                    <div class="box">
+                                        <h3>Toyota</h3>
+                                        <ul>
+                                            <li><a href="#">Toyota Feature</a></li>
+                                            <li><a href="#">Toyota Fortune</a></li>
+                                            <li><a href="#">Toyota Camry</a></li>
+                                            <li><a href="#">Toyota Corolla Altis</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-md-12">
+                                    <div class="box">
+                                        <h3>VinFast</h3>
+                                        <ul>
+                                            <li><a href="#">VinFast TF</a></li>
+                                            <li><a href="#">VinFast VF e34</a></li>
+                                            <li><a href="#">VinFast VF F8</a></li>
+                                            <li><a href="#">VinFast VF F9</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row img-row">
+                                <div class="col-3">
+                                    <div class="box">
+                                        <img src="~/Content/img/featured1.png" />
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="box">
+                                        <img src="~/Content/img/featured2.png" />
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="box">
+                                        <img src="~/Content/img/featured3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="box">
+                                        <img src="~/Content/img/featured4.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end mega menu -->
+                    <li>@Html.ActionLink("Tin tức", "New", "Home")</li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <div class="row">
+            <div class="col">
+                <h4 class="logo">CarOmini</h4>
+                <p>CarOmini là công ty chuyên cung cấp dịch vụ mua xe, tư vấn và hỗ trợ lên kế hoạch mua xe với những chính sách ưu đãi.</p>
+            </div>
+
+            <div class="col">
+                <h3>Địa chỉ</h3>
+                <p>356 Quang Trung, phường Đông Vệ, TP Thanh Hoá</p>
+                <p class="id-email">caromini@gmail.com</p>
+                <h4>+94 - 1349277272</h4>
+            </div>
+
+            <div class="col">
+                <h3>Liên kết</h3>
+                <ul>
+                    <li><a href="#" style="color: white">Trang chủ</a></li>
+                    <li><a href="#" style="color: white">Giới thiệu</a></li>
+                    <li><a href="#" style="color: white">Sản phẩm</a></li>
+                    <li><a href="#" style="color: white">Tin tức</a></li>
+                    <li><a href="#" style="color: white">Liên hệ</a></li>
+                </ul>
+
+            </div>
+
+            <div class="col">
+                <h3>Gửi liên hệ</h3>
+                <form>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Nhập email của bạn" required>
+                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                </form>
+                <div class="list-icon">
+                    <i class='bx bxl-facebook'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-whatsapp'></i>
+                    <i class='bx bxl-google-plus'></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Thiết kế bởi CarOmini - 2023</p>
+    </footer>
+
+
+    <!-- link script -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+﻿@model CarShop.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    table, th, td {
+        border: 0px solid;
+    }
+</style>
+<h2>Xoá người dùng</h2>
+
+
+<div>
+    <table style="width: 500px">
+        <tr>
+            <td>Họ tên</td>
+            <td>@Html.DisplayFor(model => model.HoTen)</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <td>Điện thoại</td>
+            <td>@Html.DisplayFor(model => model.DienThoai)</td>
+        </tr>
+        <tr>
+            <td>Mật khẩu</td>
+            <td>@Html.DisplayFor(model => model.MatKhau)</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td>@Html.DisplayFor(model => model.DiaChi)</td>
+        </tr>
+        <tr>
+            <td>Tên quyền</td>
+            <td>@Html.DisplayFor(model => model.PhanQuyen.TenQuyen)</td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoá" class="btn btn-default" /> |
+            @Html.ActionLink("Về trang chủ", "Index")
+        </div>
+    }
+</div>
