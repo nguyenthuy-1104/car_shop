@@ -1,0 +1,1 @@
+Trang web giới thiệu về sản phẩm ô tô cung cấp những hình ảnh sản phẩm, giá cả được lấy từ các showroom thực tế. Tuy nhiên sản phẩm còn có một số mặt hạn chế chưa có phần chatbox để gắn kết giữa người bán và người mua hàng. KHách hàng chỉ mới có thể xem và tham khảo các dòng sản phẩm và chưa thể đặt hàng trực tiếp tại bên này.
